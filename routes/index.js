@@ -8,13 +8,31 @@ router.get('/', function(req, res) {
 router.get('/profile', function(req, res) {
   res.render('author');
 });
-router.get('/timeline', function(req, res) {
-  var data = [
-    { id: 1, name: "bob" },
-    { id: 2, name: "john" },
-    { id: 3, name: "jake" },
-  ];
-
-  res.render('time',{info:data});
+router.get('/ourschoolprogram', function(req, res) {
+  res.render('index');
+});
+router.get('/facultymember', function(req, res) {
+  res.render('time');
+});
+router.get('/fm', function(req, res) {
+  res.render('index');
+});
+router.get('/about', function(req, res) {
+  res.render('a');
+});
+router.get('/ab', function(req, res) {
+  res.render('index');
+});
+router.get('/admission', function(req, res) {
+  res.render('ad');
+});
+router.get('/adm', function(req, res) {
+  res.render('index');
+});
+router.get('/contact', function(req, res) {
+  res.render('c');
+});
+router.get('/con', function(req, res) {
+  res.render('index');
 });
 module.exports = router;
