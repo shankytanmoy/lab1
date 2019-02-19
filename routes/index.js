@@ -5,6 +5,16 @@ var router = express.Router();
 router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
+router.get('/studentdata', function(req, res) {
+  res.render('student');
+});
+router.post('/studentdata', function(req, res) {
+  var stdid = req.body.stdid;
+  var stdname = req.body.stdname;
+
+  console.log(stdid + " " + stdname);
+  res.render('student');
+});
 router.get('/profile', function(req, res) {
   res.render('author');
 });
@@ -35,4 +45,5 @@ router.get('/contact', function(req, res) {
 router.get('/con', function(req, res) {
   res.render('index');
 });
+router.post
 module.exports = router;

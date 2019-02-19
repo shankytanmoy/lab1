@@ -5,10 +5,22 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var mongo = require('mongodb');
+var mongoose = require('mongoose');
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+mongoose.set('useCreateIndex', true);
+mongoose.connect('mongodb://localhost:27018/mydb',{
+useNewUrlParser: true
+});
+
+var db = mongoose.connection;
+
 var app = express();
+
+console.log('success');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
